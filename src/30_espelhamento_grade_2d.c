@@ -4,10 +4,10 @@
 #define LINHAS 3
 #define COLUNAS 4
 
-void espelhar_horizontal_2d(int arr[][COLUNAS], size_t linhas) {
+void espelhar_horizontal_2d(size_t linhas, size_t colunas, int arr[linhas][colunas]) {
     for (size_t i = 0; i < linhas; i++) {
         size_t ini = 0;
-        size_t fim = COLUNAS - 1;
+        size_t fim = colunas - 1;
         while (ini < fim) {
             int temp = arr[i][ini];
             arr[i][ini] = arr[i][fim];
@@ -33,7 +33,7 @@ int main(void) {
         printf("\n");
     }
 
-    espelhar_horizontal_2d(grade, LINHAS);
+    espelhar_horizontal_2d(LINHAS, COLUNAS, grade);
 
     printf("\nGrade apos espelhamento horizontal:\n");
     for (size_t i = 0; i < LINHAS; i++) {

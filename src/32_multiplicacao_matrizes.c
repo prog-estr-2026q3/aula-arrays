@@ -5,8 +5,8 @@
 #define K 3
 #define N 2
 
-void multiplicar_matrizes(const int A[][K], const int B[][N], int C[][N],
-                          size_t m, size_t k, size_t n) {
+void multiplicar_matrizes(size_t m, size_t k, size_t n,
+                          const int A[m][k], const int B[k][n], int C[m][n]) {
     for (size_t i = 0; i < m; i++) {
         for (size_t j = 0; j < n; j++) {
             C[i][j] = 0;
@@ -29,7 +29,7 @@ int main(void) {
     };
     int C[M][N];
 
-    multiplicar_matrizes(A, B, C, M, K, N);
+    multiplicar_matrizes(M, K, N, A, B, C);
 
     printf("Matriz resultante C = A * B (%dx%d):\n", M, N);
     for (size_t i = 0; i < M; i++) {

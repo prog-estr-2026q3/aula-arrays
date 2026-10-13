@@ -4,7 +4,8 @@
 #define LINHAS  2
 #define COLUNAS 3
 
-void transpor_matriz(const int A[][COLUNAS], int At[][LINHAS], size_t linhas, size_t colunas) {
+void transpor_matriz(size_t linhas, size_t colunas,
+                     const int A[linhas][colunas], int At[colunas][linhas]) {
     for (size_t i = 0; i < linhas; i++) {
         for (size_t j = 0; j < colunas; j++) {
             At[j][i] = A[i][j];
@@ -19,7 +20,7 @@ int main(void) {
     };
     int At[COLUNAS][LINHAS] = {0};
 
-    transpor_matriz(A, At, LINHAS, COLUNAS);
+    transpor_matriz(LINHAS, COLUNAS, A, At);
 
     printf("Matriz original A (%dx%d):\n", LINHAS, COLUNAS);
     for (size_t i = 0; i < LINHAS; i++) {
